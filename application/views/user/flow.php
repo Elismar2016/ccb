@@ -18,7 +18,15 @@ ini_set(“display_errors”, 0 );
     </head>
     <body>
 
-        <h1> Últimas entradas do dia </h1>
+        <h5>
+            <?php if($number == 1){ ?>
+                <?= $number; ?> entrada registrada hoje (<?= date("d/m/Y"); ?>)
+            <?php } ?>
+            <?php if($number > 1){ ?>
+                <?= $number; ?> entradas registradas hoje (<?= date("d/m/Y"); ?>)
+            <?php } ?>
+        </h5>
+        <h1> Últimas entradas do dia</h1>
         <table class="table table-condensed">
             <?php if($entrance){ ?>
                 <thead>

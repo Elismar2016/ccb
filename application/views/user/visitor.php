@@ -22,12 +22,7 @@ ini_set(“display_errors”, 0 );
             Visitantes da Biblioteca
             <div class="input-append pull-right">
                 <form method="get" action="<?= base_url('visitor/searchvisitor'); ?>">
-                    <select class="span2" id="searchmode" name="searchmode" required="true">
-                        <option value="0"> CPF </option>
-                        <option value="1"> RG </option>
-                        <option value="2"> Nome </option>
-                    </select>
-                    <input class="span4" title="Ex. para CPF: 999.999.999-99" type="text" id="searchcamp" name="searchcamp" style="text-transform: uppercase;">
+                    <input class="span6" placeholder="Pesquisar visitante" title="CPF, RG ou Nome" type="text" id="searchcamp" name="searchcamp" style="text-transform: uppercase;">
                     <button class="btn" type="submit">
                         <img title="Procurar" src="<?= base_url(); ?>assets/img/icon/search.png" class="img-responsive" height="17" width="17">
                     </button>

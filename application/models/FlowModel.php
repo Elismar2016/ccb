@@ -28,11 +28,16 @@ class FlowModel extends CI_Model {
     }
 
     public function flowtoday() {
-        $this->db->where("datehour >", date('d/m/Y'));
-        $this->db->limit(10);
+        $this->db->where("datehour >", date('Y/m/d'));
+        $this->db->limit(8);
         $this->db->order_by("datehour", "desc");
         $this->db->join('visitor', 'visitor.id=visitor', 'inner');
         return $this->db->get("flow")->result();
+    }
+
+    public function numberentrance() {
+        $this->db->where("datehour >", date('Y/m/d'));
+        return $this->db->get("flow")->num_rows();
     }
 
     public function search($id) {

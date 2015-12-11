@@ -41,7 +41,7 @@ ini_set(“display_errors”, 0 );
                                     <?php if($usecab->cabinet == $cont){ $using = true;} ?>
                                 <?php } ?>
                                 <?php if($disable == true){ ?>
-                                    <a title="Armário desativado" class="btn btn-default btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                    <a title="Armário desativado" class="btn btn-warning btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                 <?php }else{ ?>
                                 <?php if($using == true){ ?>
                                     <a title="Armário ocupado" class="btn btn-danger btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
@@ -65,7 +65,7 @@ ini_set(“display_errors”, 0 );
                                     <?php if($deactcab->cabinet == $cont){ $disable = true;} ?>
                                 <?php } ?>
                                 <?php if($disable == true){ ?>
-                                    <a title="Armário desativado" class="btn btn-large btn-default btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                    <a title="Armário desativado" class="btn btn-large btn-warning btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                 <?php }else{ ?>
                                     <a title="Armário disponível" class="btn btn-success btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                 <?php }?>

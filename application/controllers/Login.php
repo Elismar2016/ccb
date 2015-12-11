@@ -31,12 +31,13 @@ class Login extends CI_Controller {
                         'username' => $user["username"],
                         'name' => $user["name"],
                         'role' => $user["role"],
+                        'help' => $user["help"],
                         'loggedin' => TRUE
                     );
 
                     $this->session->set_userdata($session);
 
-                    redirect(base_url('welcome'));
+                    redirect(base_url('help'));
                 }
                 else{
                     $loginfail = array(

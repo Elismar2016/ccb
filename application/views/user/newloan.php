@@ -113,12 +113,7 @@ ini_set(“display_errors”, 0 );
                     <h4 style="text-align: left">Pesquisar Visitante</h4>
                     <div class="input-append">
                         <form method="get" action="<?= base_url('cabinet/searchvisitor'); ?>">
-                            <select class="span2" id="searchmode" name="searchmode" required="true">
-                                <option value="0"> CPF </option>
-                                <option value="1"> RG </option>
-                                <option value="2"> Nome </option>
-                            </select>
-                            <input class="span4" type="text" title="Ex. para CPF: 999.999.999-99" id="searchcamp" name="searchcamp" style="text-transform: uppercase;">
+                            <input class="span8" placeholder="Somente números ou letras" type="text" title="CPF, RG ou Nome" id="searchcamp" name="searchcamp" style="text-transform: uppercase;">
                             <button class="btn" type="submit">
                                 <img title="Procurar" src="<?= base_url(); ?>assets/img/icon/search.png" class="img-responsive" height="17" width="17">
                             </button>

@@ -421,8 +421,20 @@ class Visitor extends CI_Controller {
             $this->load->model('VisitorModel');
             $visitor = new VisitorModel();
             
-            $data['searchmode'] = $this->input->get('searchmode');
             $data['searchcamp'] = mb_strtoupper($this->input->get('searchcamp'));
+            
+            if (ctype_digit($data['searchcamp'])){
+                if (strlen($data['searchcamp']) != 11) {
+                    $data['searchmode'] = 1;
+                }
+                else{
+                    $data['searchmode'] = 0;
+                    $data['searchcamp'] = substr($data['searchcamp'], 0, 3).'.'.substr($data['searchcamp'], 3, 3).'.'.substr($data['searchcamp'], 6, 3).'-'.substr($data['searchcamp'], 9, 2);
+                }
+            }
+            else{
+                $data['searchmode'] = 2;
+            }
             
             switch ($data['searchmode']) {
                 case '0':
