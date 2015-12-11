@@ -1,0 +1,45 @@
+1 - Para iniciar este processo, você deve ter antes o WampServer instalado;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2 - Criação da base de dados e das tabelas:
+  2.1 - Verifique se o WampServer está em funcionamento, caracterizado pelo ícone (No canto inferior direito da tela, no menu próximo ao relogio) na cor verde;
+  2.2 - Com o WampServer em funcionamento, abra seu navegador e entre no endereço 'http://localhost';
+  2.3 - Ao abrir a tela de apresentação do WampServer, busque na coluna YOUR ALIASES (no canto inferior direito) a opção 'phpmyadmin'. Clique sobre ela;
+  2.3 - Na tela que se abriu, perceba que no canto esquerdo tem um menu, clique na opção 'NEW', que deve ser a primeira opção após um menu de seleção;
+  2.4 - No campo de texto disponível, forneça o nome "ccb" e clique em CRIAR (Atenção, o nome da base de dados deve ser ccb, tudo minúsculo);
+  2.5 - Após a criação da base de dados, é possível observar que ela já aparece na lista no menu ao lado esquerdo da tela. Clique sobre seu nome;
+  2.6 - Vemos agora a estrutura da base de dados, ainda vazia. Clique pela opção 'Importar', no menu horizontal;
+  2.7 - Na divisão FILE TO IMPORT, clique em 'Escolher Arquivo' e selecione o arquivo 'ccb.sql', presente neste pacote. Clique no botão executar, ao final da página;
+  2.8 - Já é possível visualizar, no menu à esquerda, as tabelas criadas;
+  2.9 - Ao executar o código, já é inserido automaticamente um usuário, que será usado para dar início às ações do sistema;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3 - Instalação da Aplicação:
+  3.1 - Procure o ícone do WampServer no canto inferior direito da tela, no menu próximo ao relogio. Clique com o botão esquerdo do mouse sobre ele, e depois em 'diretório www';
+  3.2 - Na pasta que se abriu, deve ser colocada a pasta 'ccb', presente neste pacote;
+  3.3 - Apos passar a pasta ccb para o diretorio www, a aplicação está pronta para ser usada;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4 - Primeiro Uso
+  4.1 - Com o WampServer em funcionamento, abra seu navegador e entre no endereço 'http://seuip/ccb' (seuip deve ser o ip da máquina servidor. Ex.: 192.168.1.34);
+    4.1.1 - Para encontrar o IP da máquina, clique com o botão esquerdo do mouse no ícone do menu iniciar da máquina servidor e depois em 'prompt de comando';
+    4.1.2 - Com o promt aberto, digite 'ipconfig' e pressione ENTER. Nos dados exibidos, procure por IPv4 e o número que seguir é o seu ip (Ex.: 192.168.1.34);
+  4.2 - O resultado deve ser a página de login. Entre com as credenciais a seguir: Usuário -> administrador e Senha -> administrador;
+    4.2.1 - Esta credencial é padrão e apenas para possibilitar o primeiro acesso;
+    4.2.2 - É aconselhável que crie-se um usuário de tipo administrador, faça login com o novo cadastro e remova o 'ADMINISTRADOR' criado automaticamente;
+      4.2.2.1 - Para isso, clique em 'Gerenciamento de Usuários' na tela exibida após o login, ou na opção Usuários, no menu suspenso;
+      4.2.2.2 - Forneça as informações do novo usuário, selecionando a opção 'Administrador' em Tipo de Usuário. Salve o novo registro;
+      4.2.2.3 - Faça logout e volte a se autenticar, desta vez com as informações do novo cadastro, previamente realizado;
+      4.2.2.4 - Clique em 'Gerenciamento de Usuários' na tela exibida após o login, ou na opção Usuários, no menu suspenso;
+      4.2.2.5 - Encontre o usuário com nome ADMINISTRADOR e clique sobre o ícone da lixeira, visível ao final da linha deste usuário na tabela. Confirme a ação;
+  4.3 - Após criar um usuário administrador do sistema, deve-se criar um usuário do atendimento, para realizar as principais funcionalidades do sistema;
+      4.3.2.1 - Para isso, clique em 'Gerenciamento de Usuários' na tela exibida após o login, ou na opção Usuários, no menu suspenso;
+      4.3.2.2 - Forneça as informações do novo usuário, selecionando a opção 'Atendimento' em Tipo de Usuário. Salve o novo registro;
+      4.3.2.3 - Faça logout e volte a se autenticar, desta vez com as informações do novo cadastro realizado;
+  4.4 - Após todos estes passos, já deve ser possível utilizar todas as funcionalidades disponíveis na aplicação;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5 - Configuração de Hora e Data
+  5.1 - Ao iniciar um novo empréstimo, é possível verificar que a hora exibida está adiantada 6 horas do horário local (Acre), e dependendo do horário, a data também fica errada;
+    5.1.1 - Isto ocorre porque a consiguração de tempo está direcionando para o horário de Paris, a qual tem fuso +1. Tirando a diferença para o fuso local (-5), temos o número 6;
+  5.2 - Procure o ícone do WampServer. Clique com o botão esquerdo do mouse sobre ele, depois em 'php>' e por fim em 'php.ini';
+  5.3 - No arquivo de textos que se abriu, procure por 'date.timezone';
+  5.4 - Onde tem 'Europe/Paris', substitua por 'America/Bogota'. Salve e feche;
+  5.5 - Procure o ícone do WampServer. Clique com o botão esquerdo do mouse sobre ele, depois em 'Reiniciar todos os serviços';
+  5.6 - Volte à aplicação e inicie novamente um empréstimo. Perceba que agora a data e hora já aparecem corretas;
