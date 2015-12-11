@@ -16,7 +16,7 @@ class Utilities extends CI_Controller {
             switch ($this->session->userdata('role')) {
                 case '1':
                     $this->load->view('template/super/header', $page);
-                    $this->load->view('super/report', $data);
+                    $this->load->view('super/util', $data);
                     break;
                 case '2':
                     $this->load->view('public/norole');
@@ -35,7 +35,7 @@ class Utilities extends CI_Controller {
         }
     }
     public function getPage() {
-        $current = array("id" => 3, "page" => "report");
+        $current = array("id" => 3, "page" => "util");
         return array("current" => $current);
     }
     
