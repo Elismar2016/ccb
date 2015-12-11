@@ -76,7 +76,7 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span3">
                         <label class="control-label" for="cep">CEP</label>
                         <div class="controls">
-                            <input type="text" class="span2" id="cep" name="cep" onkeyup="CEPMask(this);" onkeypress="integerMask();" value="<?= $currentaddress['cep']; ?>" required="true" maxlength="9">
+                            <input type="text" class="span2" id="cep" name="cep" onkeyup="CEPMask(this);" onkeypress="integerMask();" value="<?= $currentaddress['cep']; ?>" required="true" maxlength="10">
                         </div>
                     </div>
                 </div>
