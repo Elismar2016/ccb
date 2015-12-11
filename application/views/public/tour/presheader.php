@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <div class="span6">
                                     <h4>Sobre</h4>
-                                    <p>Ao clicar nesta aba, você é redirecionado para a página de informações dobre o sistema.</p>
+                                    <p>Ao clicar nesta aba, você é redirecionado para a página de informações sobre o sistema.</p>
                                 </div>
                             </div>
                             <div class="row">

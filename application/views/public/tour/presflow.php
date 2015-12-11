@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     períodos. <br />
                                     Na página podemos ver informações de quantas entradas foram registradas no dia e quais as 
                                     últimas entradas registradas. <br />
-                                    Caso um visitante tenho uma chave de armário emprestada, não é necessário registrar a entrada.
+                                    Caso um visitante tenha uma chave de armário emprestada, não é necessário registrar a entrada.
                                     <br />
                                     No final temos um botão "Nova entrada", que nos leva para a página de registro de entrada.
                                 </p>

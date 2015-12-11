@@ -53,8 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                 Ao clicar em um botão de cor verde, é aberta a página de empréstimo.
                                                                 Nela temos as informações sobre o empréstimo e visitante, e um espaço
                                                                 para pesquisa, que pode ser feita por CPF, RG ou Nome.<br />
-                                                                Apos a pesquisa realizada, uma lista de usuários será carregada, onde deve-se clicar no ícone <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" height="13" width="13">
-                                                                para selecionar o usuário.
+                                                                Apos a pesquisa realizada, uma lista de visitantes será carregada, onde deve-se clicar no ícone <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" height="13" width="13">
+                                                                para selecionar o visitante.
                                                                 Após selecionado, o empréstimo pode ser confirmado clicando no botão "Confirmar".
                                                             </p>
                                                         </div>

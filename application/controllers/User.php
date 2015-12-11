@@ -126,6 +126,7 @@ class User extends CI_Controller {
             }
         }
     }
+    
     public function edit($id=null) {
         $this->load->model('UserModel');
         $user = new UserModel();

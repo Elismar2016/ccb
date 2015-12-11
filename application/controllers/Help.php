@@ -4,15 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Help extends CI_Controller {
     public function index() {
         if ($this->isLogged()){
-            switch ($this->session->userdata('role')){
-                case '1':
-                    redirect(base_url('welcome'));
-                    break;
-                case '2':
-                    if ($this->session->userdata('help') === '1'){
+            if ($this->needhelp($this->session->userdata('userid'))){
+                switch ($this->session->userdata('role')){
+                    case '1':
+                        redirect(base_url('welcome'));
+                        break;
+                    case '2':
                         $this->load->view('public/tour/presentation');
-                    }
-                    break;
+                        break;
+                }
             }
         }
     }
@@ -62,13 +62,29 @@ class Help extends CI_Controller {
     
     public function skip() {
         if ($this->isLogged()){
-            redirect(base_url('welcome'));
+            $this->load->model('UserModel');
+            $user = new UserModel();
+            
+            $data = $user->search($this->session->userdata('userid'));
+            $data['help'] = false;
+            
+            if($user->update($data)){
+                redirect(base_url('help'));
+            }
         }
     }
     
     public function review() {
         if ($this->isLogged()){
-            redirect(base_url('welcome'));
+            $this->load->model('UserModel');
+            $user = new UserModel();
+            
+            $data = $user->search($this->session->userdata('userid'));
+            $data['help'] = true;
+            
+            if($user->update($data)){
+                redirect(base_url('help'));
+            }
         }
     }
   
@@ -79,6 +95,20 @@ class Help extends CI_Controller {
         }else {
             redirect(base_url('login'));
         }
-    }    
+    }     
+    
+    public function needhelp($id = null) {
+        $this->load->model('UserModel');
+        $user = new UserModel();
+        
+        $data = $user->search($id);
+        
+        if($data['help'] === '1'){
+            return true;
+        }
+        else{
+            redirect(base_url('welcome'));
+        }
+    }
 //////////////////////////////////////////////////////////////////////////////
 }

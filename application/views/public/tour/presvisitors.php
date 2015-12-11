@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="caption">
                                 <hr />
                                     <p align="justify">
-                                    Ao abrir a página, a lista de visitantes não aparece, pois deve ser feito uma pesquisa antes.
+                                    Ao abrir a página, a lista de visitantes não aparece, pois deve ser feita uma pesquisa antes.
                                     A pesquisa pode ser feita por CPF, RG ou Nome. <br />
                                     Apos a pesquisa realizada, é carregada uma lista com o(s) visitante(s) encontrado(s) na busca.<br />
                                     <img title="Ativo" src="<?= base_url('assets/img/icon/active.png'); ?>" height="17" width="17">

@@ -23,45 +23,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <hr>
         <div class="container">
-            <div class="row">
-
-                <div class="row-fluid show-grid">
-                    <div class="span12">
-                        <h4>CCB</h4>
-                        <p align="justify">
-                            O Sistema de Controle de Chaves da Biblioteca foi desenvolvido com o objetivo principal 
-                            simplificar o controle do empréstimo de chaves para os visitantes da Biblioteca Pública.<br />
-                            Para isso, conta com área de Gerenciamento dos Visitantes, onde é possível visualizar a lista
-                            de visitantes cadastrados no sistema, sendo possível atualizar ou editar um cadastro, bem como
-                            cadastrar um novo visitante. <br />
-                            Existe ainda a área de Gerenciamento de Chaves, onde temos um mapa dos armários da biblioteca.
-                            Nele é possível visualizar quais armários estão disponiveis e quais estão ocupados, para a partir
-                            de então dar baixa ou realizar um novo empréstimo.
-                        </p>
-
-                        <h4>Detalhes</h4>
-                        <p>
+            <h4>CCB</h4>
+            <p align="justify">
+                O Sistema de Controle de Chaves da Biblioteca foi desenvolvido com o objetivo principal 
+                simplificar o controle do empréstimo de chaves para os visitantes da Biblioteca Pública.<br />
+                Para isso, conta com área de Gerenciamento dos Visitantes, onde é possível visualizar a lista
+                de visitantes cadastrados no sistema, sendo possível atualizar ou editar um cadastro, bem como
+                cadastrar um novo visitante. <br />
+                Existe ainda a área de Gerenciamento de Chaves, onde temos um mapa dos armários da biblioteca.
+                Nele é possível visualizar quais armários estão disponiveis e quais estão ocupados, para a partir
+                de então dar baixa ou realizar um novo empréstimo.
+            </p>
+            <div class="span4" style="width: 290px;">
+                <div class="nav-pills">
+                    <h4 align="center">Detalhes</h4>
+                    <div class="caption">
+                        <p align="center">
                             Desenvolvido em PHP e HTML <br />
                             Versão atual: 1.1 <br />
                             Última modificação em 03/12/2015
                         </p>
-                        
-                        <h4>Equipe de Desenvolvimento</h4>
-                        <p align="justify">
+                    </div>
+                </div>
+            </div>
+            <div class="span4" style="width: 290px">
+                <div class="nav-pills">
+                    <h4 align="center">Equipe de Desenvolvimento</h4>
+                    <div class="caption">
+                        <p align="center">
                             Dayane Rocha<br />
                             Edson Rodrigo<br />
                             Igor Freitas<br />
                             Vinícius Anjos
                         </p>
-                        
-                        <h4>Imagens e Ícones</h4>
-                        <p align="justify">
+                    </div>
+                </div>
+            </div>
+            <div class="span4" style="width: 290px">
+                <div class="nav-pills">
+                    <h4 align="center">Imagens e Ícones</h4>
+                    <div class="caption">
+                        <p align="center">
                             www.glyphicons.com<br />
                             www.pt.depositphotos.com
                         </p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="jumbotron" align="center">
+            <a class="btn btn-primary btn-large" href="<?= base_url('help/review');?>">Ativar tutorial</a>
         </div>
     </body>
 </html>

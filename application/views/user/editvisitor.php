@@ -29,7 +29,6 @@ ini_set(“display_errors”, 0 );
                 <input type="hidden" id="id" name="id" value="<?= $visitor['id']; ?>">
                 <input type="hidden" id="status" name="status" value="<?= $visitor['status']; ?>" >
                 <input type="hidden" id="cpf" name="cpf" value="<?= $visitor['cpf']; ?>" >
-                <input type="hidden" id="rg" name="rg" value="<?= $visitor['rg']; ?>" >
                 <input type="hidden" id="maker" name="maker" value="<?= $visitor['maker']; ?>" >
                 <h4>Informações Pessoais</h4>
                 <div class="row">
@@ -50,7 +49,7 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span4">
                         <label class="control-label" for="showrg">RG</label>
                         <div class="controls">
-                            <input type="text" disabled="true" class="span3 " id="showrg" onkeypress="integerMask();" name="showrg" value="<?= $visitor['rg']; ?>">
+                            <input type="text" class="span3 " id="rg" onkeypress="integerMask();" name="rg" value="<?= $visitor['rg']; ?>" maxlength="11">
                         </div>
                     </div>
                     <div class="control-group span3">

@@ -48,7 +48,7 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span4">
                         <label class="control-label" for="rg">RG</label>
                         <div class="controls">
-                            <input type="text" class="span3" id="rg" name="rg" onkeypress="integerMask();" required="true" maxlength="14">
+                            <input type="text" class="span3" id="rg" name="rg" onkeypress="integerMask();" required="true" maxlength="11">
                         </div>
                     </div>
                     <div class="control-group span3">

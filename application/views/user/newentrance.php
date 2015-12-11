@@ -93,7 +93,7 @@ ini_set(“display_errors”, 0 );
                     <h4 style="text-align: left">Pesquisar Visitante</h4>
                     <div class="input-append">
                         <form method="get" action="<?= base_url('flow/searchvisitor'); ?>">
-                            <input class="span8" placeholder="Somente números ou letras" type="text" title="CPF, RG ou Nome" id="searchcamp" name="searchcamp" style="text-transform: uppercase;">
+                            <input class="span8" placeholder="Somente números ou letras" type="text" title="CPF, RG ou Nome" id="searchcamp" name="searchcamp" style="text-transform: uppercase;" maxlength="14">
                             <button class="btn" type="submit">
                                 <img title="Procurar" src="<?= base_url(); ?>assets/img/icon/search.png" class="img-responsive" height="17" width="17">
                             </button>
