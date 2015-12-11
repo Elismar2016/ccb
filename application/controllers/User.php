@@ -77,6 +77,7 @@ class User extends CI_Controller {
             $data['phone'] = $this->input->get('phone');
             $data['password'] = md5($this->input->get('password'));
             $data['role'] = $this->input->get('role');
+            $data['help'] = 1;
             $data['status'] = 1;
 
             if($this->input->get('password') === $this->input->get('confirmpass')){

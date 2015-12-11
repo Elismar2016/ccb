@@ -53,6 +53,9 @@ class Help extends CI_Controller {
                 case 10:
                     $this->load->view('public/tour/presnewvis');
                     break;
+                case 11:
+                    $this->load->view('public/tour/finish');
+                    break;
                 default:
                     $this->load->view('public/tour/presheader');
                     break;
