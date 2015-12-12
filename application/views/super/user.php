@@ -35,14 +35,14 @@ ini_set(“display_errors”, 0 );
                     <tr>
                         <td>
                             <?php if($user->role == 1){ ?>
-                                <img title="Administrador" src="<?= base_url(); ?>assets/img/icon/role_super.png" class="img-responsive" height="17" width="17">
+                                <img title="Administrador" src="<?= base_url('assets/img/icon/role_super.png'); ?>" class="img-responsive" height="17" width="17">
                             <?php }else{ ?>
-                                <img title="Atendimento" src="<?= base_url(); ?>assets/img/icon/role_user.png" class="img-responsive" height="17" width="17">
+                                <img title="Atendimento" src="<?= base_url('assets/img/icon/role_user.png'); ?>" class="img-responsive" height="17" width="17">
                             <?php } ?>
                             <?php if($user->status == 1){ ?>
-                                <img title="Ativo" src="<?= base_url(); ?>assets/img/icon/active.png" class="img-responsive" height="17" width="17">
+                                <img title="Ativo" src="<?= base_url('assets/img/icon/active.png'); ?>" class="img-responsive" height="17" width="17">
                             <?php }else{ ?>
-                                <img title="Inativo" src="<?= base_url(); ?>assets/img/icon/inactive.png" class="img-responsive" height="17" width="17">
+                                <img title="Inativo" src="<?= base_url('assets/img/icon/inactive.png'); ?>" class="img-responsive" height="17" width="17">
                             <?php } ?>
                         </td>
                         <td><?php echo $user->name; ?></td>
@@ -51,16 +51,16 @@ ini_set(“display_errors”, 0 );
                         <td>
                             <a href="<?= base_url('user/changestat/'.$user->id); ?>">
                                 <?php if($user->status == 1){ ?>
-                                <img title="Desativar" src="<?= base_url(); ?>assets/img/icon/disable.png" class="img-responsive" height="17" width="17" onclick="return confirm('Desativar um usuário vai impossibilitar que o mesmo possa se logar no sistema.');">
+                                <img title="Desativar" src="<?= base_url('assets/img/icon/disable.png'); ?>" class="img-responsive" height="17" width="17" onclick="return confirm('Desativar um usuário vai impossibilitar que o mesmo possa se logar no sistema.');">
                                 <?php }else{ ?>
-                                    <img title="Ativar" src="<?= base_url(); ?>assets/img/icon/disable.png" class="img-responsive" height="17" width="17" onclick="return confirm('Ativar um usuário vai possibilitar que o mesmo possa se logar no sistema.');">
+                                    <img title="Ativar" src="<?= base_url('assets/img/icon/disable.png'); ?>" class="img-responsive" height="17" width="17" onclick="return confirm('Ativar um usuário vai possibilitar que o mesmo possa se logar no sistema.');">
                                 <?php } ?>
                             </a>
                             <a href="<?= base_url('user/edit/'.$user->id); ?>">
-                                <img title="Editar" src="<?= base_url(); ?>assets/img/icon/edit.png" class="img-responsive" height="17" width="17">
+                                <img title="Editar" src="<?= base_url('assets/img/icon/edit.png'); ?>" class="img-responsive" height="17" width="17">
                             </a>
                             <a href="<?= base_url('user/delete/'.$user->id); ?>">
-                                <img title="Remover" src="<?= base_url(); ?>assets/img/icon/remove.png" class="img-responsive" height="13" width="13" onclick="return confirm('Tem certeza que deseja fazer isto? Remover um usuário vai apagar todos os registros dele no sistema.');">
+                                <img title="Remover" src="<?= base_url('assets/img/icon/remove.png'); ?>" class="img-responsive" height="13" width="13" onclick="return confirm('Tem certeza que deseja fazer isto? Remover um usuário vai apagar todos os registros dele no sistema.');">
                             </a>
                         </td>
                     </tr>

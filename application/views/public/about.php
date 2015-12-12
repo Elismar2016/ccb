@@ -71,8 +71,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-        <div class="jumbotron" align="center">
-            <a class="btn btn-primary btn-large" href="<?= base_url('help/review');?>">Ver tutorial</a>
-        </div>
+        <?php if ($this->session->userdata('loggedin') === TRUE){ ?>
+            <?php if ($this->session->userdata('role') === '2'){ ?>
+                <div class="jumbotron" align="center">
+                    <a class="btn btn-primary btn-large" href="<?= base_url('help/review');?>">Ver tutorial</a>
+                </div>
+            <?php } ?>
+        <?php } ?>
     </body>
 </html>

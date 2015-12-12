@@ -28,12 +28,7 @@ ini_set(“display_errors”, 0 );
             }
         ?>
 
-        <h1>
-            Novo Empréstimo
-            <div class="input-append pull-right">
-                <a class="btn btn-warning" style="border-radius: 0px;" href="<?= base_url(); ?>cabinet/deactivate/<?= $cabinet ?>">Desativar Armário</a>
-            </div>
-        </h1>
+        <h1> Novo Empréstimo </h1>
 
         <?php if ($savefail != null) { ?>
             <div class="alert alert-<?php echo $savefail["class"]; ?> "> <?php echo $savefail["message"]; ?> </div>

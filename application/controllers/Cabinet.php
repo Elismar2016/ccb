@@ -53,7 +53,7 @@ class Cabinet extends CI_Controller {
                     break;
                 case '2':
                     if($disabled->isdisabled($cabinet)){
-                        $this->reactivate($cabinet);
+                        $this->disabled($cabinet);
                     }
                     else{
                         if ($lending->inuse($cabinet)) {
@@ -132,39 +132,8 @@ class Cabinet extends CI_Controller {
             $this->load->view('template/public/footer');
         }
     }
-
     
-    public function deactivate($cabinet = null) {
-        if ($this->isLogged()) {
-            $page = $this->getPage();
-            $this->load->model('DisabledModel');
-            $deact = new DisabledModel();
-
-            if ($deact->inuse($cabinet)) {
-                $this->decidetask($cabinet);
-            }
-
-            switch ($this->session->userdata('role')) {
-                case '1':
-                    $this->load->view('public/norole');
-                    break;
-                case '2':
-                    $deactivate = array(
-                        'iddisabled' => null,
-                        'reason' => null,
-                        'date' => null
-                    );
-
-                    $this->session->set_userdata($deactivate);
-                    $this->load->view('template/user/header', $page);
-                    $this->load->view('user/deactivate');
-                    break;
-            }
-            $this->load->view('template/public/footer');
-        }
-    }
-    
-    public function reactivate($cabinet = null) {
+    public function disabled($cabinet = null) {
         if ($this->isLogged()) {
             $page = $this->getPage();
             
@@ -174,16 +143,14 @@ class Cabinet extends CI_Controller {
             if (!$deact->isdisabled($cabinet)) {
                 $this->decidetask($cabinet);
             }
-
             switch ($this->session->userdata('role')) {
                 case '1':
                     $this->load->view('public/norole');
                     break;
                 case '2':
                     $data['disabled'] = $deact->isdisabled($cabinet);
-
                     $this->load->view('template/user/header', $page);
-                    $this->load->view('user/reactivate', $data);
+                    $this->load->view('user/disabled', $data);
                     break;
             }
             $this->load->view('template/public/footer');
@@ -204,7 +171,7 @@ class Cabinet extends CI_Controller {
             $deactdata['status'] = true;
             
             if($deact->save($deactdata)){                
-                redirect(base_url('cabinet'));
+                redirect(base_url('utilities'));
             } else {
                 return false;
             }
@@ -225,7 +192,7 @@ class Cabinet extends CI_Controller {
             $deactdata['status'] = false;
                         
             if($deact->update($deactdata)){                
-                redirect(base_url('cabinet'));
+                redirect(base_url('utilities'));
             } else {
                 return false;
             }

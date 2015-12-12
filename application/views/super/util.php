@@ -62,12 +62,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <?php if($usecab->cabinet == $cont){ $using = true;} ?>
                                             <?php } ?>
                                             <?php if($disable == true){ ?>
-                                                <a title="Reativar armário" class="btn btn-default btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                                <a title="Reativar armário" class="btn btn-warning btn-block" style="border-radius: 0px;" href="<?= base_url('utilities/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                             <?php }else{ ?>
                                             <?php if($using == true){ ?>
-                                                <a title="Visalizar relatório do empréstimo" class="btn btn-danger btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                                <a title="Visalizar relatório do empréstimo" class="btn btn-danger btn-block" style="border-radius: 0px;" href="<?= base_url('utilities/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                             <?php }else{ ?>
-                                                <a title="Desativar armário" class="btn btn-success btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                                <a title="Desativar armário" class="btn btn-success btn-block" style="border-radius: 0px;" href="<?= base_url('utilities/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                             <?php }?>
                                             <?php }?>
                                           </div>
@@ -86,9 +86,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <?php if($deactcab->cabinet == $cont){ $disable = true;} ?>
                                             <?php } ?>
                                             <?php if($disable == true){ ?>
-                                                <a title="Reativar armário" class="btn btn-default btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                                <a title="Reativar armário" class="btn btn-warning btn-large btn-block" style="border-radius: 0px;" href="<?= base_url('utilities/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                             <?php }else{ ?>
-                                                <a title="Desativar armário" class="btn btn-success btn-block" style="border-radius: 0px;" href="<?= base_url('cabinet/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
+                                                <a title="Desativar armário" class="btn btn-success btn-block" style="border-radius: 0px;" href="<?= base_url('utilities/decidetask/'.$cont); ?>"><?php echo $cont; ?></a>
                                             <?php }?>
                                           </div>
                                         <?php $cont++; ?>

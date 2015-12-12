@@ -37,7 +37,7 @@ ini_set(“display_errors”, 0 );
             <div class="row-fluid show-grid">
                 <div class="span6">
                     <form class="form-horizontal" method="get" action="<?= base_url('cabinet/confirmdeact'); ?>">
-                        <input type="hidden" id="cabinet" name="cabinet" value="<?= $cabinet; ?>">
+                        <input type="hidden" id="cabinet" name="cabinet" value="<?= $cabinet;?>">
                         <h4>Informações</h4>
                         <div class="row">
                             <div class="control-group span3">

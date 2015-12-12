@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="specificloan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84752c8c-cebb-47fc-8888-e23d24dbc974">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="14"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     lending.`datehour` AS lending_datehour,
+     lending.`cabinet` AS lending_cabinet,
+     lending.`status` AS lending_status,
+     address.`street` AS address_street,
+     address.`number` AS address_number,
+     address.`cep` AS address_cep,
+     city.`namecity` AS city_namecity,
+     district.`namedistrict` AS district_namedistrict,
+     state.`uf` AS state_uf,
+     visitor.`name` AS visitor_name,
+     visitor.`cpf` AS visitor_cpf,
+     visitor.`rg` AS visitor_rg,
+     visitor.`phone` AS visitor_phone
+FROM
+     `lending` lending,
+     `address` address,
+     `city` city,
+     `district` district,
+     `state` state,
+     `visitor` visitor
+WHERE
+     lending.`id` = $P{id}
+ AND visitor.`id` = lending.`visitor`
+ AND address.`idaddress` = visitor.`address`
+ AND district.`iddistrict` = address.`district`
+ AND city.`idcity` = district.`city`
+ AND state.`idstate` = city.`state`]]>
+	</queryString>
+	<field name="lending_datehour" class="java.sql.Timestamp"/>
+	<field name="lending_cabinet" class="java.lang.Integer"/>
+	<field name="lending_status" class="java.lang.Integer"/>
+	<field name="address_street" class="java.lang.String"/>
+	<field name="address_number" class="java.lang.String"/>
+	<field name="address_cep" class="java.lang.String"/>
+	<field name="city_namecity" class="java.lang.String"/>
+	<field name="district_namedistrict" class="java.lang.String"/>
+	<field name="state_uf" class="java.lang.String"/>
+	<field name="visitor_name" class="java.lang.String"/>
+	<field name="visitor_cpf" class="java.lang.String"/>
+	<field name="visitor_rg" class="java.lang.String"/>
+	<field name="visitor_phone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<image>
+				<reportElement uuid="447689e6-282f-4c70-91bb-1e8c9f091d0d" x="25" y="2" width="238" height="67"/>
+				<imageExpression><![CDATA["C:\\wamp\\www\\ccb\\assets\\img\\reportimg.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="43c0309e-431e-4f8b-bd2e-269605f72e30" x="2" y="93" width="553" height="1" forecolor="#666666"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<line>
+				<reportElement uuid="fd9b7f84-d27e-4992-b627-0b3e27163e97" x="0" y="43" width="553" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a5ca43d5-c1bf-4968-b7d9-e3e17d570b86" x="25" y="2" width="528" height="42" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Courier New" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de empréstimo]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="194" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d55712b2-d735-4a38-b3e7-9b843c65665f" x="7" y="30" width="59" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Armário:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2726fa43-fe58-4c00-a94d-6102db18ad9c" x="349" y="30" width="117" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora de entrada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d6ce8221-5800-4a96-beaa-9a716a9ac093" x="225" y="101" width="28" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RG:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c95d42d1-c6c0-4d09-b934-1ca649f23b87" x="7" y="81" width="39" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="691260d4-6968-4c92-b278-3394f1b91583" x="7" y="101" width="39" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2230a251-8000-46d3-83a4-a1538b4f829c" x="132" y="30" width="119" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de entrada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1fedf254-6982-4517-8a58-f6e8a63526b4" x="410" y="151" width="33" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e7fcc68-825f-4101-a643-4bdd8a6ffcec" x="7" y="151" width="39" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rua:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79496aa5-91bd-4a83-b21e-e8ae0028c4a5" x="498" y="172" width="23" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1bfa105e-5d2e-49cb-be01-9556c4b1dbb9" x="254" y="172" width="51" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0862b19d-24f1-4e6f-be5f-5967835cfd0d" x="146" y="1" width="278" height="21"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações do empréstimo]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="3c1b809f-aa38-4d11-9754-3dad4b4cd7a7" x="2" y="58" width="551" height="1" forecolor="#CCCCCC"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="034fb8d5-904b-499f-aa02-b2df596a3310" x="151" y="59" width="269" height="21"/>
+				<textElement>
+					<font fontName="Courier New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações do visitante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ceb4c497-0415-40af-a2cf-32871a539787" x="245" y="125" width="84" height="21"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a848e633-ae89-40d9-bf43-531119ad64f7" x="306" y="151" width="55" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="93a8fb24-8c4c-4acd-bf88-9781d9fa6b99" x="7" y="172" width="59" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab4b6b36-1762-4e0b-90da-4e15b9b97481" x="368" y="101" width="67" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e9c13e43-a7fd-4ebd-b1ec-6044eea39fd7" x="66" y="30" width="66" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lending_cabinet}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="e89783ae-208b-44f0-81bf-e4e00b46df3b" x="251" y="30" width="98" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lending_datehour}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement uuid="d9722117-74c0-4e2f-bc42-6edb7a757f9d" x="466" y="30" width="87" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lending_datehour}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="c0336ded-21ae-43b8-93f9-38553c75dd6a" x="47" y="81" width="506" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{visitor_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="81695422-4ae8-4c35-bd80-eae26b1e34c8" x="47" y="101" width="177" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{visitor_cpf}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="8466a60f-da8f-4209-b985-8c509d3cfaeb" x="48" y="151" width="257" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address_street}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="97cb0483-fe01-436d-b5de-1d0a99597307" x="254" y="101" width="113" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{visitor_rg}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="973b91b2-f295-4a01-aeb0-305f7809e3d1" x="436" y="101" width="117" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{visitor_phone}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="40c4b031-c581-4452-ba6e-aa546a3aaaea" x="67" y="172" width="184" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{district_namedistrict}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="6c37fe4e-d1e2-481e-9f18-e92fba14572b" x="362" y="151" width="47" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address_number}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="4c134002-a026-49cc-9a01-793e6004feb1" x="444" y="151" width="109" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address_cep}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="9c9af98d-09d8-41dd-b20b-cf1930e6de2f" x="306" y="172" width="191" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city_namecity}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="d5b69078-e48c-4c54-9590-047f1698fa8c" x="522" y="172" width="31" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state_uf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="351149d3-7475-45dc-8f3b-02eebed8a135" x="7" y="1" width="146" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<text><![CDATA[Relatório gerado em]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="e2a6bc15-aed1-4460-8595-0dd1afa286d9" x="154" y="1" width="161" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

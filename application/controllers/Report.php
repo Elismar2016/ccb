@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Report extends CI_Controller {
-
+    
     public function index() {
         if ($this->isLogged()) {
             $page = $this->getPage();
@@ -18,6 +18,14 @@ class Report extends CI_Controller {
             }
             $this->load->view('template/public/footer');
         }
+    }
+    
+    public function specific($lending) {
+        $this->load->model('m_jasper');
+        $responsible = $this->session->userdata('name');
+        $filepath = base_url('application/view/report/');
+        $parameter = array("id" => $lending);
+        $pdf = $this->m_jasper->gerarRelatorioPdf('/report/', 'ReportId', $parameter, $filepath);
     }
 ///////////////////////////////////////////////////////////////////////////////
     
