@@ -94,7 +94,7 @@ class Visitor extends CI_Controller {
             $vphone = $this->input->get('phone');
             $vstreet = mb_strtoupper($this->input->get('street'));
             $vnumber = $this->input->get('number');
-            $vcep = $this->input->get('cep');
+            $vcep = $this->input->get('CEP');
             $vdistrict = mb_strtoupper($this->input->get('district'));
             $vcity = mb_strtoupper($this->input->get('city'));
             $vuf = $this->input->get('uf');

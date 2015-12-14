@@ -15,7 +15,7 @@ ini_set(“display_errors”, 0 );
         <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/codeigniter.css'); ?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet" media="screen">
-        <script src="<?= base_url('assets/js/masks.js'); ?>" type="text/javascript"></script>
+        <script src="<?= base_url('assets/js/masksnvalidation.js'); ?>" type="text/javascript"></script>
     </head>
     <body>
 
@@ -55,10 +55,11 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span3">
                         <label class="control-label" for="phone">Telefone</label>
                         <div class="controls">
-                            <input type="text" id="phone" name="phone" onkeyup="PhoneMask(this);" onkeypress="integerMask();" value="<?= $visitor['phone']; ?>" required="true" maxlength="14">
+                            <input type="text" id="phone" name="phone" onblur="ValidatesPhone(this)" onkeyup="PhoneMask(this);" onkeypress="integerMask();" value="<?= $visitor['phone']; ?>" required="true" maxlength="14">
                         </div>
                     </div>
                 </div>
+                <hr />
                 <h4>Endereço</h4>
                 <div class="row">
                     <div class="control-group span6 ">
@@ -76,7 +77,7 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span3">
                         <label class="control-label" for="cep">CEP</label>
                         <div class="controls">
-                            <input type="text" class="span2" id="cep" name="cep" onkeyup="CEPMask(this);" onkeypress="integerMask();" value="<?= $currentaddress['cep']; ?>" required="true" maxlength="10">
+                            <input type="text" class="span2" id="cep" name="cep" onkeyup="CEPMask(this);" onkeypress="integerMask();" onblur="ValidatesCEP(this)" value="<?= $currentaddress['cep']; ?>" required="true" maxlength="10">
                         </div>
                     </div>
                 </div>

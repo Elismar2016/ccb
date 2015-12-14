@@ -1,5 +1,5 @@
 function CEPMask(cep){
-            if(integerMask(cep)==false){
+        if(integerMask(cep)==false){
             event.returnValue = false;
         }       
         return formatField(cep, '00.000-000', event);
@@ -7,31 +7,38 @@ function CEPMask(cep){
 
 function PhoneMask(phone){  
         if(integerMask(phone)==false){
-                event.returnValue = false;
+            event.returnValue = false;
         }       
         return formatField(phone, '(00)0000-0000', event);
 }
 
 function CPFMask(cpf){
         if(integerMask(cpf)==false){
-                event.returnValue = false;
+            event.returnValue = false;
         }       
         return formatField(cpf, '000.000.000-00', event);
 }
 
 function ValidatesPhone(phone){
-        exp = /\(\d{2}\)\ \d{4}\-\d{4}/
-        if(!exp.test(phone.value))
+        if(phone.value.length > 0){
+            if(phone.value.length < 13){       
                 alert('Numero de Telefone Invalido!');
+                phone.focus();
+            }
+        }
 }
 
 function ValidatesCEP(cep){
-        exp = /\d{2}\.\d{3}\-\d{3}/
-        if(!exp.test(cep.value))
-                alert('Numero de CEP Invalido!');               
+        if(cep.value.length > 0){ 
+            if(cep.value.length < 10){       
+                alert('Numero de CEP Invalido!');  
+                cep.focus();
+            }        
+        }
 }
 
 function ValidatesCPF(Objcpf){
+    if(Objcpf.value.length > 0){
         var cpf = Objcpf.value;
         exp = /\.|\-/g
         cpf = cpf.toString().replace( exp, "" ); 
@@ -48,8 +55,11 @@ function ValidatesCPF(Objcpf){
         sum2=(((sum2+(2*sum1))*10)%11);
 
         var generatedDigit=(sum1*10)+sum2;
-        if(generatedDigit!=typedDigit)        
-                alert('CPF Invalido!');         
+        if(generatedDigit!=typedDigit){       
+            alert('CPF Invalido!');
+            Objcpf.focus();
+        }
+    }    
 }
 
 function integerMask(){

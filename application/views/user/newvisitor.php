@@ -15,7 +15,7 @@ ini_set(“display_errors”, 0 );
         <link href="<?= base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/codeigniter.css');?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/font-awesome.min.css');?>" rel="stylesheet" media="screen">
-        <script src="<?= base_url('assets/js/masks.js'); ?>" type="text/javascript"></script>
+        <script src="<?= base_url('assets/js/masksnvalidation.js'); ?>" type="text/javascript"></script>
         <script src="<?= base_url('assets/js/tooltip.js'); ?>" type="text/javascript"></script>
     </head>
     <body>
@@ -42,19 +42,19 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span4">
                         <label class="control-label" for="cpf">CPF</label>
                         <div class="controls">
-                            <input type="text" title="Ex.: 999.999.999-99" class="span3 " id="cpf" onkeyup="CPFMask(this);" onkeypress="integerMask();" name="cpf" required="true" maxlength="14" placeholder="Ex.: XXX.XXX.XXX-XX" >
+                            <input type="text" title="Ex.: 999.999.999-99" class="span3 " id="cpf" onblur="ValidatesCPF(this)" onkeyup="CPFMask(this);" onkeypress="integerMask();" name="cpf" required="true" maxlength="14" placeholder="Ex.: XXX.XXX.XXX-XX" >
                         </div>
                     </div>
                     <div class="control-group span4">
                         <label class="control-label" for="rg">RG</label>
                         <div class="controls">
-                            <input type="text" class="span3" id="rg" name="rg" onkeypress="integerMask();" required="true" maxlength="11">
+                            <input type="text" class="span3" id="rg" name="rg" onkeypress="integerMask();" required="true" maxlength="14">
                         </div>
                     </div>
                     <div class="control-group span3">
                         <label class="control-label" for="phone">Telefone</label>
                         <div class="controls">
-                            <input type="text" title="Ex.: (99)9999-9999" id="phone" name="phone" required="true" onkeyup="PhoneMask(this);" onkeypress="integerMask();" placeholder="Ex.: (DD)XXXX-XXXX" maxlength="13">
+                            <input type="text" title="Ex.: (99)9999-9999" id="phone" name="phone" required="true" onblur="ValidatesPhone(this)" onkeyup="PhoneMask(this);" onkeypress="integerMask();" placeholder="Ex.: (DD)XXXX-XXXX" maxlength="13">
                         </div>
                     </div>
                 </div>
@@ -73,11 +73,17 @@ ini_set(“display_errors”, 0 );
                         </div>
                     </div>
                     <div class="control-group span3">
-                        <label class="control-label" for="cep">CEP</label>
+                        <label class="control-label" for="CEP">CEP</label>
                         <div class="controls">
-                            <input type="text" title="Ex.: 99.999-999" class="span2" id="cep" name="cep" onkeyup="CEPMask(this);" onkeypress="integerMask();" required="true" maxlength="10" placeholder="Ex.: XX.XXX-XXX">
+                            <input type="text" title="Ex.: 99.999-999" class="span2 " id="CEP" onblur="ValidatesCEP(this)" onkeyup="CEPMask(this);" onkeypress="integerMask();" name="CEP" required="true" maxlength="14" placeholder="Ex.: XXX.XXX.XXX-XX" >
                         </div>
                     </div>
+<!--                    <div class="control-group span3">
+                        <label class="control-label" for="cep">CEP</label>
+                        <div class="controls">
+                            <input type="text" title="Ex.: 99.999-999" class="span2" id="cep" name="cep" onblur="ValidatesCEP(this)" onkeyup="CEPMask(this)" onkeypress="integerMask();" required="true" maxlength="10" placeholder="Ex.: XX.XXX-XXX">
+                        </div>
+                    </div>-->
                 </div>
                 <div class="row">
                     <div class="control-group span6">

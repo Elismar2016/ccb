@@ -20,6 +20,7 @@ ini_set(“display_errors”, 0 );
 
         <h1>
             Visitantes da Biblioteca
+            
             <div class="input-append pull-right">
                 <form method="get" action="<?= base_url('visitor/searchvisitor'); ?>">
                     <input class="span6" placeholder="Pesquisar visitante" title="CPF, RG ou Nome" type="text" id="searchcamp" name="searchcamp" style="text-transform: uppercase;" maxlength="14">
@@ -29,6 +30,10 @@ ini_set(“display_errors”, 0 );
                 </form>
             </div>
         </h1>
+        <?php if ($savesuccess != null) { ?>
+            <div class="alert alert-<?php echo $savesuccess["class"]; ?>"> <?php echo $savesuccess["message"]; ?> </div>
+        <?php }?>
+            <br />
         <table class="table table-condensed">
             <?php if($visitors){ ?>
                 <thead>
@@ -81,12 +86,6 @@ ini_set(“display_errors”, 0 );
                   }?>
         </table>
         <a class="btn btn-primary" href="<?= base_url(); ?>visitor/newvisitor">Novo visitante</a>
-        
-        <?php if ($savesuccess != null) { if ($savesuccess['id'] == '1'){?>
-            <script>alert('Visitante cadastrado com sucesso!');</script>
-            <?php }else{ ?>
-            <script>alert('Cadastro atualizado com sucesso!');</script>
-        <?php }} ?>
         
     </body>
 </html>

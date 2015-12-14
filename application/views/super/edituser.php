@@ -15,7 +15,7 @@ ini_set(“display_errors”, 0 );
         <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/codeigniter.css'); ?>" rel="stylesheet" media="screen">
         <link href="<?= base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet" media="screen">
-        <script src="<?= base_url('assets/js/masks.js'); ?>" type="text/javascript"></script>
+        <script src="<?= base_url('assets/js/masksnvalidation.js'); ?>" type="text/javascript"></script>
     </head>
     <body>
 
