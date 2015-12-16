@@ -365,9 +365,11 @@ class Cabinet extends CI_Controller {
             
             $aux = $lending->activelist();
             $blocked = false;
+            $nkey = null;
 
             foreach ($aux as $verify){
                 if ($verify->visitor == $lendingdata['visitor']) {
+                    $nkey = $verify->cabinet;
                     $blocked = true;
                 }
             }
@@ -385,7 +387,7 @@ class Cabinet extends CI_Controller {
             } else {
                 $savefail = array(
                     "class" => "danger",
-                    "message" => "O visitante selecionado já possui um empréstimo");
+                    "message" => "O visitante selecionado já possui um empréstimo. Armário: ".$nkey);
 
                 $data['savefail'] =  $savefail;
 
