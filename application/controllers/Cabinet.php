@@ -387,7 +387,7 @@ class Cabinet extends CI_Controller {
             } else {
                 $savefail = array(
                     "class" => "danger",
-                    "message" => "O visitante selecionado já possui um empréstimo. Armário: ".$nkey);
+                    "message" => "O visitante selecionado já possui um empréstimo. Armário:".$nkey);
 
                 $data['savefail'] =  $savefail;
 
