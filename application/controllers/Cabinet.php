@@ -413,8 +413,8 @@ class Cabinet extends CI_Controller {
         if ($this->isLogged()) {
             $page = $this->getPage();
             switch ($this->session->userdata('role')) {
-                case '1':
-                    $this->load->view('public/norole');
+                case '1':          
+                    redirect(base_url('utilities'));
                     break;
                 case '2':
                     redirect(base_url('cabinet'));
