@@ -40,8 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="caption">
                         <p align="center">
                             Desenvolvido em PHP e HTML <br />
-                            Versão atual: 1.1 <br />
-                            Última modificação em 03/12/2015
+                            Versão atual: 1.2.0 <br />
+                            Última atualização em 18/12/2015
                         </p>
                     </div>
                 </div>

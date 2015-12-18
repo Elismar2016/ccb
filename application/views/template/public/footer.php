@@ -15,6 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body>
       <hr>
       <div class="footer" id="footer">
-          <p> CCB v.1.1 - 2015</p>
+          <p> CCB v.1.2 - 2015</p>
       </div>
     </body>
