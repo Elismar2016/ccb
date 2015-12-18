@@ -123,6 +123,7 @@ ini_set(“display_errors”, 0 );
                                     <th>RG</th>
                                     <th class="span3">Nome</th>
                                     <th>Telefone</th>
+                                    <th>--</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,6 +138,11 @@ ini_set(“display_errors”, 0 );
                                         <td><?php echo $visitor->rg; ?></td>
                                         <td><?php echo $visitor->name; ?></td>
                                         <td><?php echo $visitor->phone; ?></td>
+                                        <td>
+                                            <a href="<?= base_url('visitor/edit/'.$visitor->id); ?>">
+                                                <img title="Editar" src="<?= base_url(); ?>assets/img/icon/edit.png" class="img-responsive" height="17" width="17">
+                                            </a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

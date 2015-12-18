@@ -41,3 +41,6 @@ Detalhe:
 	Corrigidos alguns erros;
 	Inserida funcionalidade para controle de fluxo para usuários do balcão;
 	Criadas páginas de tutorial para novos usuários;
+	Corrigidos alguns erros;
+	Ao cadastrar ou atualizar, é feita uma busca automativamente pelo registro inserido ou modificado;
+	Inserido ícone de edição de cadastro no momento de selecionar visitante para empréstimo;

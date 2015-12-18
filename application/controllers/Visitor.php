@@ -33,14 +33,8 @@ class Visitor extends CI_Controller {
                         case 1:
                             $savesuccess = array(
                                 "id" => "1",
-                                "class" => "success",
-                                "message" => "Visitante cadastrado com sucesso!");
-                            break;
-                        case 2:
-                            $savesuccess = array(
-                                "id" => "2",
-                                "class" => "success",
-                                "message" => "Cadastro atualizado com sucesso!");
+                                "class" => "alert alert-info",
+                                "message" => "Cadastro removido com sucesso!");
                             break;
                     }
                     $msg = array("savesuccess" => $savesuccess);
@@ -222,7 +216,17 @@ class Visitor extends CI_Controller {
             $visitordata['status'] = 1;
             
             if($visitor->save($visitordata)){
-                redirect(base_url('visitor/index/1'));
+                $savesuccess = array(
+                    "id" => "1",
+                    "class" => "success",
+                    "message" => "Visitante cadastrado com sucesso!");
+                
+                $delivery = $visitor->searchforcpf($vcpf);
+                        
+                $msg = array("visitors" => $delivery, "savesuccess" => $savesuccess);
+                $this->load->view('template/user/header', $page);
+                $this->load->view('user/visitor', $msg);
+                $this->load->view('template/public/footer');
             }
             else{
                 return false;
@@ -368,7 +372,17 @@ class Visitor extends CI_Controller {
             $visitordata['status'] = $vstatus;
             
             if($visitor->update($visitordata)){
-                redirect(base_url('visitor/index/2'));
+                $savesuccess = array(
+                    "id" => "1",
+                    "class" => "success",
+                    "message" => "Cadastro atualizado com sucesso!");
+                
+                $delivery = $visitor->searchforcpf($vcpf);
+                        
+                $msg = array("visitors" => $delivery, "savesuccess" => $savesuccess);
+                $this->load->view('template/user/header', $page);
+                $this->load->view('user/visitor', $msg);
+                $this->load->view('template/public/footer');
             }
             else{
                 return false;
@@ -388,7 +402,7 @@ class Visitor extends CI_Controller {
                     break;
                 case '2':
                     if ($visitor->delete($id)) {
-                        redirect(base_url('visitor'));
+                        redirect(base_url('visitor/index/1'));
                     }
                     break;
             }
