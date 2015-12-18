@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <hr />
                 <div class="jumbotron">
                     <a class="btn btn-warning" href="<?= base_url('help/skip');?>">Pular tutorial</a>
-                    <a class="btn btn-primary pull-right" href="<?= base_url('help/init');?>">Iniciar tutorial</a>
+                    <a class="btn btn-success pull-right" href="<?= base_url('help/init');?>">Iniciar tutorial</a>
                 </div>
             </div>
         </div>

@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="span4" style="width: 290px">
                 <div class="nav-pills">
-                    <h4 align="center">Equipe de Desenvolvimento</h4>
+                    <h4 align="center">Desenvolvimento</h4>
                     <div class="caption">
                         <p align="center">
                             Dayane Rocha<br />

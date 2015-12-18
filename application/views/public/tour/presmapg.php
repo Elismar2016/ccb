@@ -53,8 +53,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                 Ao clicar em um botão de cor verde, é aberta a página de empréstimo.
                                                                 Nela temos as informações sobre o empréstimo e visitante, e um espaço
                                                                 para pesquisa, que pode ser feita por CPF, RG ou Nome.<br />
+                                                                <h5>Veja que a forma de pesquisa mudou. Agora, basta digitar a informação de CPF, RG ou Nome, sem a necessidade de pontos ou traços, e pesquisar.</h5>
                                                                 Apos a pesquisa realizada, uma lista de visitantes será carregada, onde deve-se clicar no ícone <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" height="13" width="13">
                                                                 para selecionar o visitante.
+                                                                <h5>Perceba que ao fim de cada visitante listado, temos um ícone de lápis. Ele serve como atalho para a página de edição
+                                                                    de visitante.</h5>
                                                                 Após selecionado, o empréstimo pode ser confirmado clicando no botão "Confirmar".
                                                             </p>
                                                         </div>

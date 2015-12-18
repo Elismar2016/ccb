@@ -38,9 +38,6 @@ class Help extends CI_Controller {
                 case 5:
                     $this->load->view('public/tour/presmapo');
                     break;
-                case 6:
-                    $this->load->view('public/tour/presdeact');
-                    break;
                 case 7:
                     $this->load->view('public/tour/presflow');
                     break;

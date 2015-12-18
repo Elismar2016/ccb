@@ -53,8 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                 Ao clicar em um botão de cor verde, é aberta a página de empréstimo.
                                                                 Nela temos as informações sobre o empréstimo e visitante, e um espaço
                                                                 para pesquisa, que pode ser feita por CPF, RG ou Nome.<br />
-                                                                Apos a pesquisa realizada, uma lista de usuários será carregada, onde deve-se clicar no ícone <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" height="13" width="13">
-                                                                para selecionar o usuário.
+                                                                <h5>Veja que a forma de pesquisa mudou. Agora, basta digitar a informação de CPF, RG ou Nome, sem a necessidade de pontos ou traços, e pesquisar.</h5>
+                                                                Apos a pesquisa realizada, uma lista de visitantes será carregada, onde deve-se clicar no ícone <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" height="13" width="13">
+                                                                para selecionar o visitante.
                                                                 Após selecionado, o empréstimo pode ser confirmado clicando no botão "Confirmar".
                                                             </p>
                                                         </div>
@@ -107,10 +108,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div class="caption">
                                                             <hr />
                                                             <p align="justify">
-                                                                Ao clicar em um botão de cor laranja, é aberta a página de reativação.
+                                                                Ao clicar em um botão de cor laranja, é aberta a página com informação sobre um armário desativado.
                                                                 Nela temos as informações sobre a desativação do armário, como data, hora e motivo. Não é possível editar
                                                                 nenhum destes campos, presentes apenas para informação.<br />
-                                                                Clicando no botão "Confirmar", a reativação é concluída e o armário passa a se tornar disponível para empréstimo.
+                                                                <h5>Perceba que a funcionalidade de desativar armários não está mais presente. Ela é, agora, exclusiva para os administradores do sistema.</h5>
+                                                                Clicando no botão "Voltar", você é redirecionado para a página de mapa de armários.
                                                             </p>
                                                         </div>
                                                     </div>

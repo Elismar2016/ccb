@@ -53,6 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     - Clicando neste ícone, é aberta a página para edição do cadastro do visitante.<br />
                                     <img title="Remover" src="<?= base_url('assets/img/icon/remove.png'); ?>" height="17" width="17">
                                     - Clicando neste ícone, acontece a remoção do cadastro do visitante.<br />
+                                    <h5>Veja que a forma de pesquisa mudou. Agora, basta digitar a informação de CPF, RG ou Nome, sem a necessidade de pontos ou traços, e pesquisar.<br />
+                                        Outra mudança fica a cargo de novos cadastros ou atualização. Após concluído algum dos dois, o visitante já é apresentado 
+                                        automaticamente na lista.</h5>
                                     No fim temos um botão "Novo visitante", que nos leva para o formulário de cadastro de visitante.
                                 </p>
                             </div>

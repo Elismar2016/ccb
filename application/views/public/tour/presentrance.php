@@ -44,8 +44,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     Apos a pesquisa realizada, uma lista de usuários será carregada, onde deve-se clicar no ícone 
                                     <img title="Selcionar" src="<?= base_url('assets/img/icon/select.png'); ?>" class="img-responsive" 
                                          height="13" width="13"> para selecionar o usuário.<br />
+                                    <h5>Veja que a forma de pesquisa mudou. Agora, basta digitar a informação de CPF, RG ou Nome, sem a necessidade de pontos ou traços, e pesquisar.</h5>
                                     Após selecionado, o registro de entrada pode ser confirmado clicando no botão "Confirmar".<br />
-                                    Caso um usuário já tenha um emprástimo em curso, não é necessário registrar a entrada, pois ela é
+                                    Caso um usuário já tenha um empréstimo em curso, não é necessário registrar a entrada, pois ela é
                                     feita automaticamento ao emprestar uma chave.
                                 </p>
                             <br />

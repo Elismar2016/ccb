@@ -163,15 +163,12 @@ CREATE TABLE IF NOT EXISTS `visitor` (
   `cpf` varchar(11) COLLATE utf8_bin NOT NULL,
   `rg` varchar(11) COLLATE utf8_bin NOT NULL,
   `phone` varchar(14) COLLATE utf8_bin NOT NULL,
+  `maker` INT(11) COLLATE utf8_bin NOT NULL,
   `address` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`,`rg`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=8 ;
-
-ALTER TABLE `visitor` ADD `maker` INT(11) NOT NULL DEFAULT '1' AFTER `address`;
-
-ALTER TABLE `VISITOR` CHANGE `MAKER` `MAKER` INT(11) NOT NULL;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

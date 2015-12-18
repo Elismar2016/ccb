@@ -43,6 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     alterada. <br />
                                     Todos os campos contem validação, então devem ser cuidadosamente preenchidos com
                                     as informações corretamente. <br />
+                                    <h5>Incluída verificação no momento do preenchimento do formulário. Caso algo esteja fora do permitido, uma mensagem aparecerá
+                                        instantâneamente.</h5>
                                     Após todos os campos preenchidos corretamente, o cadastro pode ser concluído clicando
                                     no botão "Confirmar".
                                 </p>
