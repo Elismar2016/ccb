@@ -480,13 +480,35 @@ class Visitor extends CI_Controller {
         $this->load->model('VisitorModel');
         $visitor = new VisitorModel();
         if ($this->isLogged()) {
+            $page = $this->getPage();
             switch ($this->session->userdata('role')) {
                 case '1':
                     $this->load->view('public/norole');
                     break;
                 case '2':
+                    $aux = $visitor->search($id);
+                    if($aux['status'] == '1'){
+                        $savesuccess = array(
+                            "id" => "1",
+                            "class" => "success",
+                            "message" => "Visitante desativado com sucesso!");
+                    }
+                    else{
+                        $savesuccess = array(
+                            "id" => "1",
+                            "class" => "success",
+                            "message" => "Visitante ativado com sucesso!");
+                    }
+                    
                     if ($visitor->changestat($id)) {
-                        redirect(base_url('visitor'));
+                        $delivery = $visitor->search($id);
+                        $vcpf = $delivery['cpf'];
+                        $delivery = $visitor->searchforcpf($vcpf);
+                        
+                        $msg = array("visitors" => $delivery, "savesuccess" => $savesuccess);
+                        $this->load->view('template/user/header', $page);
+                        $this->load->view('user/visitor', $msg);
+                        $this->load->view('template/public/footer');
                     }
                     break;
             }
