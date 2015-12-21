@@ -1,7 +1,5 @@
 <?php
 
-include_once('Report.php');
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Utilities extends CI_Controller {
@@ -53,12 +51,6 @@ class Utilities extends CI_Controller {
                     break;
             }
         }
-    }
-    
-    public function specific($lending) {
-        $page = $this->getPage();
-        $this->load->view('template/super/header', $page);
-        echo 'Página não implementada';
     }
     
     public function deactivate($cabinet = null) {
@@ -116,6 +108,16 @@ class Utilities extends CI_Controller {
             }
             $this->load->view('template/public/footer');
         }
+    }
+    
+//    Métodos para relatórios
+    
+    public function specific($cabinet = null) {
+        $this->load->model('ReportModel');
+        $report = new ReportModel();
+        
+        $rep = $report->inuse($cabinet);
+        $data = array("lending" => $rep);
     }
     
 ///////////////////////////////////////////////////////////////////////////////
