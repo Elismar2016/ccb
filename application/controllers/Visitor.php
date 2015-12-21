@@ -372,16 +372,23 @@ class Visitor extends CI_Controller {
             $visitordata['status'] = $vstatus;
             
             if($visitor->update($visitordata)){
-                $savesuccess = array(
-                    "id" => "1",
-                    "class" => "success",
-                    "message" => "Cadastro atualizado com sucesso!");
-                
-                $delivery = $visitor->searchforcpf($vcpf);
-                        
-                $msg = array("visitors" => $delivery, "savesuccess" => $savesuccess);
                 $this->load->view('template/user/header', $page);
-                $this->load->view('user/visitor', $msg);
+                if($this->session->userdata('incourse') === TRUE){
+                    $delivery = $visitor->searchforcpf($vcpf);
+                    $msg = array("visitors" => $delivery);
+                    $this->load->view('user/newloan', $msg);
+                }
+                else{
+                    $savesuccess = array(
+                        "id" => "1",
+                        "class" => "success",
+                        "message" => "Cadastro atualizado com sucesso!");
+
+                    $delivery = $visitor->searchforcpf($vcpf);
+
+                    $msg = array("visitors" => $delivery, "savesuccess" => $savesuccess);
+                    $this->load->view('user/visitor', $msg);
+                }
                 $this->load->view('template/public/footer');
             }
             else{
