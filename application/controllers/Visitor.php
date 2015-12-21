@@ -121,6 +121,18 @@ class Visitor extends CI_Controller {
                     return false;
             }
             
+            if(!$this->existingrg($vrg)){
+                $savefail = array(
+                        "class" => "danger",
+                        "message" => "O RG digitado já existe em nossa base de dados.");
+
+                    $msg = array("savefail" => $savefail, "states" => $state->listing());
+                    $this->load->view('template/user/header', $page);
+                    $this->load->view('user/newvisitor', $msg);
+                    $this->load->view('template/public/footer');
+                    return false;
+            }
+            
             if(!$this->correctamount($vphone, 1)){
                 $savefail = array(
                         "class" => "danger",
@@ -581,6 +593,16 @@ class Visitor extends CI_Controller {
         
         return true;
         
+    }
+    
+    function existingrg($rg = null) {
+        $this->load->model('VisitorModel');
+        $visitor = new VisitorModel();
+        
+        if($visitor->searchforrg($rg)){
+            return false;
+        }
+        return true;
     }
     
     function correctamount($value = null, $type = null) {
