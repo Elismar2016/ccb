@@ -113,11 +113,16 @@ class Utilities extends CI_Controller {
 //    Métodos para relatórios
     
     public function specific($cabinet = null) {
+        $this->load->model('LendingModel');
+        $lending = new LendingModel();
         $this->load->model('ReportModel');
         $report = new ReportModel();
         
-        $rep = $report->inuse($cabinet);
-        $data = array("lending" => $rep);
+        $lend = $lending->inuse($cabinet);
+        
+        if($report->specific($lend['id'])){
+            return true;
+        }
     }
     
 ///////////////////////////////////////////////////////////////////////////////

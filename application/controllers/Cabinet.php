@@ -3,17 +3,23 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cabinet extends CI_Controller {
-
+// Metodo index que chama a página do controlador
     public function index() {
+        // Função para saber se existe um login ativo no computador que fez a requisição
         if ($this->isLogged()) {
+            // Pega a página atual, para mostrar no menu suspenso
             $page = $this->getPage();
+            
+            // Carregando e inicializando os modelos a serem usados
             $this->load->model('LendingModel');
             $this->load->model('DisabledModel');
             $lending = new LendingModel();
             $disabled = new DisabledModel();
+            // carregando dados para saber quais armários estão em uso e quais estão desativados
             $data['inuse'] = $lending->activelist();
             $data['deact'] = $disabled->listing();
 
+            // Seta todos os parâmetros de um empréstimo para null
             $this->session->set_userdata('id', null);
             $this->session->set_userdata('datehour', null);
             $this->session->set_userdata('cabinet', null);
@@ -26,11 +32,13 @@ class Cabinet extends CI_Controller {
             $this->session->set_userdata('visitor_status', false);
 
 
-
+            // verifica se o timpo de usuário permite que acesse a página
             switch ($this->session->userdata('role')) {
+                // Caso seja administrador, a permissão é negada e ele é redirecionado para a página de erro de permissão
                 case '1':
                     $this->load->view('public/norole');
                     break;
+                // Caso seja usuário do atendimento, a página é carregada
                 case '2':
                     $this->load->view('template/user/header', $page);
                     $this->load->view('user/map', $data);
@@ -39,26 +47,33 @@ class Cabinet extends CI_Controller {
             $this->load->view('template/public/footer');
         }
     }
-
+    // Funcção para decidir qual ação tomar ao clicar em um armário
     public function decidetask($cabinet = null) {
+        // Verificando se está logado
         if ($this->isLogged()) {
+            // Pega a página atual
             $page = $this->getPage();
+            // Carrega e inicializa os modelos
             $this->load->model('DisabledModel');
             $disabled = new DisabledModel();
             $this->load->model('LendingModel');
             $lending = new LendingModel();
+            // Verifica a permissão
             switch ($this->session->userdata('role')) {
                 case '1':
                     $this->load->view('public/norole');
                     break;
                 case '2':
+                    // Se inativo, mostra página com informações da desativação
                     if($disabled->isdisabled($cabinet)){
                         $this->disabled($cabinet);
                     }
                     else{
+                        // Se em uso, abre a página de devolução
                         if ($lending->inuse($cabinet)) {
                             $this->closeloan($cabinet);
                         } else {
+                            // Se livre, abre a página de empréstimo
                             $this->newloan($cabinet);
                         }
                     }

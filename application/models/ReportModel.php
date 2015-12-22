@@ -1,20 +1,27 @@
 <?php
 
+        include_once('class/tcpdf/tcpdf.php');
+        include_once('class/PHPJasperXML.inc.php');
+        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+//        include_once ('setting.php');
+
 class ReportModel extends CI_Model {
 
     function ReportModel() {
         parent::__construct();
     }
-
-    public function inuse($cabinet) {
-        $this->db->where("lending.status", true);
-        $this->db->where("lending.cabinet", $cabinet);
-        $this->db->join('visitor', 'visitor.id=visitor', 'inner');
-        $this->db->join('address', 'address.idaddress=visitor.address', 'inner');
-        $this->db->join('district', 'district.iddistrict=address.district', 'inner');
-        $this->db->join('city', 'city.idcity=district.city', 'inner');
-        $this->db->join('state', 'state.idstate=city.state', 'inner');
-        return $this->db->get("lending")->row_array();
+    
+    function specific($lendingid) {
+        
+        $xml = simplexml_load_file('C:/wamp/www/ccb/application/reports/specificloan.jrxml');
+        
+        $report = new PHPJasperXML();
+        $report->debugsql = false;
+        $report->arrayParameter = array("id" => $lendingid);
+        $report->xml_dismantle($xml);
+        
+        $report->transferDBtoArray('localhost', 'root', 'ccbpe2015', 'ccb');
+        $report->outpage("D");
     }
 
 }
