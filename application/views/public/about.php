@@ -40,8 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="caption">
                         <p align="center">
                             Desenvolvido em PHP e HTML <br />
-                            Versão atual: 1.2.0 <br />
-                            Última atualização em 18/12/2015
+                            Versão atual: 1.2.1 <br />
+                            Última atualização em 21/12/2015
                         </p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h4 align="center">Desenvolvimento</h4>
                     <div class="caption">
                         <p align="center">
-                            Dayane Rocha<br />
+                            Dayane da Rocha<br />
                             Edson Rodrigo<br />
                             Igor Freitas<br />
                             Vinícius Anjos
