@@ -22,7 +22,7 @@ function CPFMask(cpf){
 function ValidatesPhone(phone){
         if(phone.value.length > 0){
             if(phone.value.length < 13){       
-                alert('Numero de Telefone Invalido!');
+                alert('Telefone deve conter DDD + 8 dígitos.');
                 phone.focus();
             }
         }
@@ -31,7 +31,7 @@ function ValidatesPhone(phone){
 function ValidatesCEP(cep){
         if(cep.value.length > 0){ 
             if(cep.value.length < 10){       
-                alert('Numero de CEP Invalido!');  
+                alert('CEP deve conter 8 dígitos.');  
                 cep.focus();
             }        
         }
@@ -41,7 +41,7 @@ function ValidatesCPF(Objcpf){
     if(Objcpf.value.length > 0){
         var cpf = Objcpf.value;
         exp = /\.|\-/g
-        cpf = cpf.toString().replace( exp, "" ); 
+        cpf = cpf.toString().replace( exp, "" );
         var typedDigit = eval(cpf.charAt(9)+cpf.charAt(10));
         var sum1=0, sum2=0;
         var vle =11;
@@ -55,10 +55,15 @@ function ValidatesCPF(Objcpf){
         sum2=(((sum2+(2*sum1))*10)%11);
 
         var generatedDigit=(sum1*10)+sum2;
-        if(generatedDigit!=typedDigit){       
-            alert('CPF Invalido!');
-            Objcpf.focus();
-        }
+        
+            if(Objcpf.value.length < 14){       
+                alert('CPF deve conter 11 dígitos.');  
+                Objcpf.focus();
+            }        
+//        if(generatedDigit!=typedDigit){       
+//            alert('CPF Invalido!');
+//            Objcpf.focus();
+//        }
     }    
 }
 

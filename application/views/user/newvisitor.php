@@ -75,7 +75,7 @@ ini_set(“display_errors”, 0 );
                     <div class="control-group span3">
                         <label class="control-label" for="CEP">CEP</label>
                         <div class="controls">
-                            <input type="text" title="Ex.: 99.999-999" class="span2 " id="CEP" onblur="ValidatesCEP(this)" onkeyup="CEPMask(this);" onkeypress="integerMask();" name="CEP" required="true" maxlength="14" placeholder="Ex.: XXX.XXX.XXX-XX" >
+                            <input type="text" title="Ex.: 99.999-999" class="span2 " id="CEP" onblur="ValidatesCEP(this)" onkeyup="CEPMask(this);" onkeypress="integerMask();" name="CEP" required="true" maxlength="14" placeholder="Ex.: XX.XXX-XXX" >
                         </div>
                     </div>
 <!--                    <div class="control-group span3">

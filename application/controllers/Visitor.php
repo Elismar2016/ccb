@@ -565,20 +565,7 @@ class Visitor extends CI_Controller {
                 $cpf == '88888888888' ||
                 $cpf == '99999999999') {
             return false;
-            // Calcula os digitos verificadores para verificar se o
-            // CPF é válido
         } else {
-
-            for ($t = 9; $t < 11; $t++) {
-
-                for ($d = 0, $c = 0; $c < $t; $c++) {
-                    $d += $cpf{$c} * (($t + 1) - $c);
-                }
-                $d = ((10 * $d) % 11) % 10;
-                if ($cpf{$c} != $d) {
-                    return false;
-                }
-            }
             return true;
         }
     }
