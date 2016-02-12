@@ -16,7 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body>
 
         <h1>Configurações</h1>
-
-        <script>alert('Página ainda não implementada');</script>
+        
+        Armários disponíveis: 90
+        
     </body>
 </html>
